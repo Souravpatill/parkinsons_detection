@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-family: var(--font-syne), system-ui, sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+
+/* Typography Utility Classes */
+.font-display { font-family: var(--font-syne), sans-serif; }
+.font-heading { font-family: var(--font-outfit), sans-serif; }
+.font-sans { font-family: var(--font-plus-jakarta), sans-serif; }
+.font-mono { font-family: var(--font-jetbrains-mono), monospace; }
+
+/* Premium Medical-Tech Background */
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(13, 148, 136, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+    linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  z-index: 0;
+}
+
+/* Abstract Background Pattern - SVG Data URI */
+.app-shell::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.4;
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2364748b' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Refined glass: more translucent, softer shadow */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border-radius: 2rem;
+  box-shadow:
+    0 12px 48px -12px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 1) inset,
+    0 0 0 1px rgba(148, 163, 184, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-subpanel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 1.75rem;
+  box-shadow:
+    0 4px 20px -2px rgba(15, 23, 42, 0.03),
+    0 0 0 1px rgba(148, 163, 184, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-subpanel:hover {
+  transform: translateY(-4px) scale(1.01);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 20px 40px -12px rgba(15, 23, 42, 0.12),
+    0 0 0 1px rgba(148, 163, 184, 0.15);
+}
+
+/* Sidebar (Sense-style nav) */
+.sidebar-glass {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-right: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.nav-item {
+  @apply flex items-center gap-3.5 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-500 transition-all duration-300;
+}
+
+.nav-item:hover {
+  @apply bg-white/80 text-slate-900 shadow-sm border-white/50;
+}
+
+.nav-item-active {
+  @apply bg-teal-500/10 text-teal-900 shadow-sm shadow-teal-500/5;
+  font-weight: 700;
+}
+
+/* Floating content container */
+.content-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 2rem;
+  box-shadow:
+    0 24px 64px -16px rgba(15, 23, 42, 0.12),
+    0 0 0 1px rgba(148, 163, 184, 0.08);
+}
+
+.section-label {
+  @apply text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 font-heading;
+}
+
+.soft-scroll {
+  scroll-behavior: smooth;
+}
