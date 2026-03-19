@@ -1,0 +1,38 @@
+{
+  "last_updated": "2026-03-15",
+  "notes": "Demo metrics only. Replace with real held-out test results from your training pipeline before using clinically.",
+  "test_set_description": {
+    "dataset_names": ["PD-Voice-Demo-2026", "PD-Spiral-Demo-2026"],
+    "n_pd": 120,
+    "n_controls": 130,
+    "sites": 3,
+    "split_strategy": "stratified subject-level split (60/20/20 train/val/test, no subject leakage)"
+  },
+  "models": [
+    {
+      "name": "audio_only",
+      "description": "Audio model trained on voice recordings only.",
+      "auc": 0.86,
+      "sensitivity": 0.82,
+      "specificity": 0.80,
+      "balanced_accuracy": 0.81
+    },
+    {
+      "name": "spiral_only",
+      "description": "Image model trained on spiral drawings only.",
+      "auc": 0.88,
+      "sensitivity": 0.84,
+      "specificity": 0.83,
+      "balanced_accuracy": 0.84
+    },
+    {
+      "name": "fused_model",
+      "description": "Multi-modal fusion model combining audio and spiral embeddings.",
+      "auc": 0.93,
+      "sensitivity": 0.91,
+      "specificity": 0.88,
+      "balanced_accuracy": 0.89
+    }
+  ]
+}
+

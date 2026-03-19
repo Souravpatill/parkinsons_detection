@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+python-multipart
+torch
+torchvision
+torchaudio
+librosa
+opencv-python
+albumentations
+numpy
+shap
+captum
+scikit-learn
+pydantic
+transformers
+timm
+soundfile
